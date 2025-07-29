@@ -1,0 +1,36 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["wireplumber", "battery", "custom/power", "network", "clock", "custom/vpn"],
+    "hyprland/window": {
+        "max-length": 50
+    },
+    "network": {
+	"format": "{ifname}",
+	"format-wifi": "{essid} ({signalStrength}%)",
+	"tooltip-format-wifi": "{ipaddr}/{cidr}",
+	"format-ethernet": "{ifname}",
+	"tooltip-format-ethernet": "{ipaddr}/{cidr}",
+	"format-disconnected": "",
+    },
+    "custom/power": {
+	"exec": "sh ~/.config/waybar/power.sh",
+	"interval": 2,
+	"format": "PWR: {}W"
+    },
+    "wireplumber": {
+	"format": "VOL: {volume}%",
+    },
+    "battery": {
+        "format": "BAT: {capacity}%",
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "custom/vpn": {
+        "exec": "sh ~/.config/waybar/vpn.sh",
+        "interval": 5,
+        "tooltip": false
+    }
+}
